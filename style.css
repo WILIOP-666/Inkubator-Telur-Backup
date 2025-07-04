@@ -1,0 +1,27 @@
+/* Mengatur warna latar belakang halaman agar tidak terlalu silau */
+body {
+    background-color: #f8f9fa;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Menghilangkan border pada kartu agar terlihat lebih menyatu dengan background */
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Memberi sedikit bayangan halus */
+}
+
+/* Mengatur warna teks utama pada panel monitoring */
+.display-4 {
+    color: #0d6efd; /* Warna biru primer Bootstrap */
+}
+
+/* Kustomisasi untuk slider agar lebih besar dan mudah disentuh */
+.form-range::-webkit-slider-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.form-range::-moz-range-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+}
