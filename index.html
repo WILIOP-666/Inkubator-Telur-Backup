@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrol Panel Inkubator</title>
+    
+    <!-- 1. Memuat CSS dari Bootstrap untuk styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- 2. Memuat ikon dari Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- 3. Memuat file CSS kustom kita -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGASI ATAS -->
+    <nav class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-egg-fried"></i>
+                Panel Kontrol Inkubator
+            </a>
+            <span class="navbar-text">
+                Status Koneksi: <span id="ws-status" class="badge bg-danger">Terputus</span>
+            </span>
+        </div>
+    </nav>
+
+    <!-- KONTEN UTAMA -->
+    <main class="container mt-4">
+
+        <!-- Baris untuk Panel Monitoring Utama -->
+        <div class="row text-center">
+            <!-- Kartu untuk Menampilkan Suhu -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted"><i class="bi bi-thermometer-half"></i> SUHU AKTUAL</h5>
+                        <p class="display-4 fw-bold" id="temp-value">--.- °C</p>
+                        <p class="card-text">Target: <span id="setpoint-display" class="fw-bold">--.-</span> °C</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu untuk Menampilkan Kelembapan -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted"><i class="bi bi-droplet-half"></i> KELEMBAPAN</h5>
+                        <p class="display-4 fw-bold" id="humidity-value">-- %</p>
+                        <p class="card-text">Ideal: 50-60%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu untuk Menampilkan Waktu -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted"><i class="bi bi-clock"></i> WAKTU SISTEM</h5>
+                        <p class="display-4 fw-bold" id="time-value">--:--:--</p>
+                        <p class="card-text">Disinkronkan via RTC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Baris untuk Panel Kontrol dan Status -->
+        <div class="row">
+            <!-- Kolom untuk Kontrol Sistem -->
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header fw-bold">Panel Kontrol</div>
+                    <div class="card-body">
+                        <!-- Kontrol untuk Mengatur Target Suhu -->
+                        <label for="setpoint-input" class="form-label">Atur Target Suhu (°C)</label>
+                        <div class="input-group mb-4">
+                            <input type="number" class="form-control" id="setpoint-input" step="0.1" value="37.5" placeholder="Contoh: 37.5">
+                            <button class="btn btn-primary" type="button" id="set-temp-btn">Atur</button>
+                        </div>
+
+                        <!-- Kontrol untuk Mengatur Kecepatan Kipas -->
+                        <label for="fan-slider" class="form-label">Atur Kecepatan Kipas: <span id="fan-speed-label" class="fw-bold">50</span>%</label>
+                        <input type="range" class="form-range" id="fan-slider" min="0" max="100" step="1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom untuk Status Aktuator -->
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header fw-bold">Status Aktuator</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                            Pemanas (Heater)
+                            <span id="heater-status" class="badge bg-secondary rounded-pill fs-6">MATI</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 4. Memuat file JavaScript dari Bootstrap (dibutuhkan untuk beberapa komponen interaktif) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 5. Memuat file JavaScript kustom kita (logika utama ada di sini) -->
+    <script src="app.js"></script>
+</body>
+</html>
