@@ -145,4 +145,4 @@ Proyek ini memiliki banyak ruang untuk dikembangkan lebih lanjut, antara lain:
 Proyek ini dilisensikan di bawah **Lisensi MIT**. Lihat file `LICENSE` untuk detail lebih lanjut. Anda bebas untuk memodifikasi, mendistribusikan, dan menggunakan kode ini untuk proyek pribadi maupun komersial.
 
 ---
-Dibuat dengan semangat berbagi. Semoga bermanfaat
+Dibuat dengan semangat berbagi. Semoga bermanfaat Willi & Oka Pramana
